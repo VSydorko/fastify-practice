@@ -1,5 +1,5 @@
-import { IEntityRepo } from 'src/types/IEntityRepo';
-import { Entity } from 'src/types/Entity';
+import { IEntityRepo } from 'src/types/entity/IEntityRepo';
+import { Entity } from 'src/types/entity/Entity';
 
 export async function createEntity(params: {
   entityRepo: IEntityRepo;
