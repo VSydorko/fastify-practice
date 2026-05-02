@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const EntitySchema = z.object({
+export const PostSchema = z.object({
   id: z.string().uuid(),
   title: z.string(),
   description: z.string().optional().nullable(),
@@ -8,4 +8,4 @@ export const EntitySchema = z.object({
   createdAt: z.date()
 });
 
-export type Entity = z.infer<typeof EntitySchema>;
+export type Post = z.infer<typeof PostSchema>;

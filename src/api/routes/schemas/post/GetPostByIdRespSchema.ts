@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const GetEntityByIdRespSchema = z.object({
+export const GetPostByIdRespSchema = z.object({
   id: z.string(),
   title: z.string(),
   description: z.string().optional().nullable(),
