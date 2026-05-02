@@ -15,6 +15,13 @@
       "when": 1777723543203,
       "tag": "0001_thankful_iron_lad",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1777724539279,
+      "tag": "0002_known_annihilus",
+      "breakpoints": true
     }
   ]
 }

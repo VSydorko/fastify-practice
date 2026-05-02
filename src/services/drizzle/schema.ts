@@ -11,6 +11,7 @@ export const postsTable = pgTable('posts', {
 
 export const commentsTable = pgTable('comments', {
   id: uuid().primaryKey().default(sql`uuid_generate_v4()`),
+  postId: uuid().notNull().references(() => postsTable.id, { onDelete: 'cascade' }),
   text: varchar({ length: 255 }).notNull(),
   createdAt: timestamp().defaultNow(),
   updatedAt: timestamp().defaultNow().$onUpdate(() => new Date())
