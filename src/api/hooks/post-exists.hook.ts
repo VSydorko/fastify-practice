@@ -6,6 +6,6 @@ export const postExistsHook: preHandlerAsyncHookHandler = async function (reques
 
   const post = await request.server.repos.postRepo.getPostById(postId);
   if (!post) {
-    throw new HttpError(404, 'Post not found');
+    throw new HttpError(404, 'Post not found', undefined, 404);
   }
 };

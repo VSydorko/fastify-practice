@@ -1,5 +1,6 @@
 import { ICommentRepo } from 'src/types/comment/ICommentRepo';
 import { Comment } from 'src/types/comment/Comment';
+import { HttpError } from 'src/api/errors/HttpError';
 
 export async function updateCommentById(params: {
   commentRepo: ICommentRepo;
@@ -8,7 +9,7 @@ export async function updateCommentById(params: {
 }) {
   const comment = await params.commentRepo.updateCommentById(params.commentId, params.data);
   if (!comment) {
-    throw new Error('Comment not found');
+    throw new HttpError(404, 'Comment not found', undefined, 404);
   }
 
   return comment;

@@ -6,6 +6,6 @@ export const commentBelongsToPostHook: preHandlerAsyncHookHandler = async functi
 
   const comment = await request.server.repos.commentRepo.getCommentByIdAndPostId(commentId, postId);
   if (!comment) {
-    throw new HttpError(404, 'Comment not found');
+    throw new HttpError(404, 'Comment not found', undefined, 404);
   }
 };
