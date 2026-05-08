@@ -1,9 +1,9 @@
 import { FastifyPluginAsync } from 'fastify';
 import { ZodTypeProvider } from 'fastify-type-provider-zod';
-import { GetCommentByIdRespSchema } from 'src/api/routes/schemas/comment/GetCommentByIdRespSchema';
 import { z } from 'zod';
 import { updateCommentById } from 'src/controllers/comment/update-comment-by-id';
-import { UpdateCommentReqSchema } from '../../schemas/comment/UpdateCommentsReqSchema';
+import { GetCommentByIdRespSchema } from 'src/api/routes/schemas/comment/GetCommentByIdRespSchema';
+import { UpdateCommentReqSchema } from 'src/api/routes/schemas/comment/UpdateCommentsReqSchema';
 
 const routes: FastifyPluginAsync = async function (f) {
   const fastify = f.withTypeProvider<ZodTypeProvider>();
@@ -11,6 +11,7 @@ const routes: FastifyPluginAsync = async function (f) {
   fastify.patch('/', {
     schema: {
       params: z.object({
+        postId: z.string().uuid(),
         commentId: z.string().uuid()
       }),
       response: {

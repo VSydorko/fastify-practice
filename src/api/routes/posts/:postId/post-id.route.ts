@@ -1,10 +1,10 @@
 import { FastifyPluginAsync } from 'fastify';
 import { ZodTypeProvider } from 'fastify-type-provider-zod';
-import { GetPostByIdRespSchema } from 'src/api/routes/schemas/post/GetPostByIdRespSchema';
-import { GetPostByIdWithCommentsRespSchema } from 'src/api/routes/schemas/post/GetPostByIdWithCommentsRespSchema';
 import { z } from 'zod';
 import { getPostById } from 'src/controllers/post/get-post-by-id';
 import { updatePostById } from 'src/controllers/post/update-post-by-id';
+import { GetPostByIdRespSchema } from 'src/api/routes/schemas/post/GetPostByIdRespSchema';
+import { GetPostByIdWithCommentsRespSchema } from 'src/api/routes/schemas/post/GetPostByIdWithCommentsRespSchema';
 import { UpdatePostReqSchema } from '../../schemas/post/UpdatePostsReqSchema';
 
 const routes: FastifyPluginAsync = async function (f) {

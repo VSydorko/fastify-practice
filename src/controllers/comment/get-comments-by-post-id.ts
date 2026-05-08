@@ -5,9 +5,6 @@ export async function getCommentsByPostId(params: {
   postId: string;
 }) {
   const comments = await params.commentRepo.getCommentsByPostId(params.postId);
-  if (comments === null) {
-    throw new Error('Post not found');
-  }
 
   return comments;
 }
