@@ -1,4 +1,4 @@
- 
+
 import 'src/services/env/env.service';
 import fastify from 'fastify';
 import autoload from '@fastify/autoload';
@@ -70,11 +70,7 @@ async function run() {
   server.decorate(
     'db',
     getDb({
-      host: process.env.PGHOST || '',
-      port: parseInt(process.env.PGPORT || ''),
-      db: process.env.PGDATABASE || '',
-      user: process.env.PGUSERNAME || '',
-      pwd: process.env.PGPASSWORD || '',
+      connectionString: process.env.DATABASE_URL || '',
       logsEnabled: process.env.NODE_ENV == 'local'
     })
   );

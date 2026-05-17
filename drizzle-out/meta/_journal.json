@@ -22,6 +22,13 @@
       "when": 1777724539279,
       "tag": "0002_known_annihilus",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1779050952453,
+      "tag": "0003_little_bill_hollister",
+      "breakpoints": true
     }
   ]
 }
